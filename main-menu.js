@@ -1,11 +1,12 @@
 const {app, Menu} = require('electron');
 const isWindows = process.platform === 'win32';
+const {showMessage} = require('./dialogue.js')
 
 module.exports = {
   setMainMenu
 };
 
-function setMainMenu(){
+function setMainMenu(mainWindow){
   const template = [
     {
       label: isWindows ? 'File' : app.getName(),
@@ -41,7 +42,7 @@ function setMainMenu(){
           label: 'get Dialogue',
           accelarator: 'Ctrl+1',
           click(){
-            
+            showMessage(mainWindow);
           }
         }
       ]
