@@ -1,6 +1,6 @@
 const {app, Menu} = require('electron');
 const isWindows = process.platform === 'win32';
-const {showMessage} = require('./dialogue.js')
+const {showMessage,showSaveDialog,showOpenDialog} = require('./dialogue.js')
 
 module.exports = {
   setMainMenu
@@ -40,9 +40,23 @@ function setMainMenu(mainWindow){
       submenu: [
         {
           label: 'get Dialogue',
-          accelarator: 'Ctrl+1',
+          accelerator: 'Ctrl+1',
           click(){
             showMessage(mainWindow);
+          }
+        },
+        {
+          label: 'Save Memory Usage info',
+          accelerator: 'Ctrl+2',
+          click(){
+            showSaveDialog(mainWindow);
+          }
+        },
+        {
+          label: 'Show Open dialog',
+          accelerator: 'Ctrl+3',
+          click(){
+            showOpenDialog(mainWindow);
           }
         }
       ]
