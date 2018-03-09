@@ -38,6 +38,7 @@ function createBrowserWindow(browserWindowOpts){
 
   win.on('close', () => {
     windows.splice(windows.indexOf(win), 1);
+    sendWindowCount();
   });
 }
 
