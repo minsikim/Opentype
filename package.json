@@ -1,11 +1,13 @@
 {
   "name": "opentype",
+  "productName": "Opentype Test",
   "version": "1.0.0",
   "description": "opentype javascript library studying",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron app.js"
+    "start": "electron app.js",
+    "package": "build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,9 @@
   "devDependencies": {
     "devtron": "^1.4.0",
     "electron": "^1.8.3"
+  },
+  "build": {
+    "appId": "com.OrganizationName.ProductName",
+    "files": "!folderUwantToIgnore${/*}"
+    }
   }
-}
